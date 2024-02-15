@@ -83,7 +83,7 @@ html {
 }
 
 #slider-button {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     background-image: url('https://yt3.googleusercontent.com/0BG5EljBKwAj7KTyd4OKjAQdU5hOW9bWs0qQMFHMcyTmkiBk6tdX6UeCZjq69RCWn4iuOK_zFiE=s176-c-k-c0x00ffffff-no-rj');
@@ -98,17 +98,49 @@ html {
     filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
 }
 
+#slider-button1{
+    background-image: url('https://yt3.googleusercontent.com/BU5c6xuocX_lWxvRgZMqUEM5-cxm6zlZi3OU5LdiZqLvoSJkepzDiVT0SDwpiKNZOzMrhklcYw=s176-c-k-c0x00ffffff-no-rj');
+}
+#slider-button2{
+    background-image: url('https://yt3.googleusercontent.com/i1QbudlE_ixtCgoH1WcdrVYdBhXyCCfOFmag_gVfL6yr8L0cmVeB5Vv2IXQCRGGEsJ7jLGI3=s176-c-k-c0x00ffffff-no-rj');
+}
+#slider-button3{
+    background-image: url('https://yt3.googleusercontent.com/yFbH4_0HiSlUd8revjlzme0ReQV5XCVkk8Uht2V-_WQoPsVOJnpJ9IbIADA3dnnLeqaTzCEZPNI=s176-c-k-c0x00ffffff-no-rj');
+}
+
+#slider-button3,
+#slider-button2,
+#slider-button1 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px; 
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.979);
+    margin-left: 100px;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    animation: fall-motion 0.5s;
+    filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+}
+#slider-button3:hover,
+#slider-button2:hover,
+#slider-button1:hover,
 #slider-button:hover {
     transform: translateX(-2px) translateY(-2px);
     box-shadow: 8px 8px 0px rgb(255, 255, 255);
 }
-
+#slider-button3:active,
+#slider-button2:active,
+#slider-button1:active,
 #slider-button:active {
     transform: translateX(4px) translateY(4px);
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
 }
 
 #app{
+    display: block;
     font-size: 18px;
     position: absolute; 
     top: 15%; 
@@ -116,8 +148,36 @@ html {
     transform: translateY(-50%); 
     color: #ffffff;
     font-weight: bold;
+    animation: fall-motion4 0.5s;
     filter: drop-shadow(0px 0px 2px rgb(255, 255, 255));
 }
+
+#app4,
+#app3,
+#app2,
+#app2{
+    display: none;
+    font-size: 18px;
+    position: absolute; 
+    top: 15%; 
+    left: 220px; 
+    transform: translateY(-50%); 
+    color: #ffffff;
+    font-weight: bold;
+    animation: fall-motion4 0.5s;
+    filter: drop-shadow(0px 0px 2px rgb(255, 255, 255));
+}
+
+@keyframes fall-motion4 {
+    0% {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 
 #nav2 {
     display: flex;
@@ -478,19 +538,19 @@ align-items: center;
 
 .child {
 display: block;
-margin: auto; /* Để căn giữa button */
+margin: auto;
 }
 
 .hidden-div {
 display: none;
-color: #ffffff; /* Ẩn div khác mặc định */
+color: #ffffff;
 }
 
 .loader-container {
     transform: translateY(5px);
     width: 40%;
-    height: 15px; /* Độ dài thanh loading */
-    background-color: #f0f0f0; /* Màu nền của thanh loading */
+    height: 15px; 
+    background-color: #f0f0f0; 
     position: relative;
     animation: progress2 0.5s linear;
 }
@@ -521,24 +581,3 @@ animation: progress 2.3s linear;
     0% {width: 0%;}
     100% {width: 40%;}
 }
-
-
-/* .description {
-    /* Mặc định ẩn div khi không có class "ogpen" */
-      /* opacity: 0;
-      transition: opacity 1s ease; /* Thêm transition cho thuộc tính opacity */
-/* }
-
-.description.open{
-    opacity: 1; /* Đặt opacity thành 1 khi có class "open" */
-    /* Khi class "open" được thêm vào, div sẽ hiện ra */
-/* } */
-
-/* .below-divs {
-    transition: transform 0.5s ease; /* Thêm transition cho thuộc tính transform */
-    /* transform: translateY(-50%); /* Mặc định không trượt */
-/* }
-
-.below-divs.open {
-transform: translateY(0%); /* Khi class "open" được thêm vào, các "below-div" sẽ trượt xuống dưới "myDiv" */
-/* }  */ 

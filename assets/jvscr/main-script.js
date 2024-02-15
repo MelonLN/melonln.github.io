@@ -44,7 +44,7 @@ var observer = new MutationObserver(function(mutations) {
   });
 });
 
-// Start observing the '.description' elements for attribute changes
+// Start observing
 var targetNodes = document.querySelectorAll('.description');
 targetNodes.forEach(function(targetNode) {
   observer.observe(targetNode, { attributes: true });
@@ -103,73 +103,14 @@ style.innerHTML = `
 }`;
 document.head.appendChild(style);
 
-//px
-function addElement() {
-  var pixelFrame = document.querySelector('.pixel-frame');
-  var newElement = document.createElement('div');
-  // Thêm các thuộc tính cho newElement tại đây
-  pixelFrame.appendChild(newElement);
-}
-
-//show description
-// document.addEventListener('DOMContentLoaded', function() {
-//     var buttons = document.querySelectorAll('.button-content');
-//     var descriptions = document.querySelectorAll('.description');
-//     var containers = Array.from(document.querySelectorAll('.container'));
-
-//     // Tạo một mảng để theo dõi trạng thái hiển thị của mỗi phần tử .description
-//     var isShowing = new Array(descriptions.length).fill(false);
-
-//     // Thêm sự kiện click vào mỗi nút
-//     buttons.forEach(function(button, index) {
-//         button.addEventListener('click', function() {
-//             var description = descriptions[index];
-//             // var div = document.getElementById("myDiv");
-//             // descriptions.classList.toggle("open");
-//             // // var belowDivs = document.querySelector(".below-divs");
-//             // containers.classList.toggle("open");
-//             if (!isShowing[index]) {
-//                 // Trượt xuống các phần tử sau
-//                 for (var i = index + 1; i < containers.length; i++) {
-//                     containers[i].style.transform = 'translateY(30px)';
-//                 }
-//                 setTimeout(function() {
-//                     description.style.opacity = '1';
-//                 }, 1500);
-//                 setTimeout(function() {
-//                     description.style.display = 'block';
-//                     for (var i = index + 1; i < containers.length; i++) {
-//                         containers[i].style.transform = 'translateY(0)';
-//                     }
-//                 }, 1000);
-//                 isShowing[index] = true;
-//             } else {
-//                 description.style.opacity = '0';
-//                 setTimeout(function() {
-//                     if (!isShowing[index]) {
-//                         description.style.display = 'none';
-//                         // Trượt lên các phần tử sau
-//                         for (var i = index + 1; i < containers.length; i++) {
-//                             containers[i].style.transform = 'translateY(0)';
-//                         }
-//                     }
-//                 }, 500);
-//                 isShowing[index] = false;
-//             }
-//         });
-//     });
-// });
-
 //2
 document.addEventListener('DOMContentLoaded', function() {
     var buttons = document.querySelectorAll('.button-content');
     var descriptions = document.querySelectorAll('.description');
     // var containers = Array.from(document.querySelectorAll('.container'));
 
-    // Tạo một mảng để theo dõi trạng thái hiển thị của mỗi phần tử .description
     var isShowing = new Array(descriptions.length).fill(false);
 
-    // Thêm sự kiện click vào mỗi nút
     buttons.forEach(function(button, index) {
         button.addEventListener('click', function() {
             var description = descriptions[index];
@@ -210,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 //         containers[i].classList.toggle("close");
                 //     }
                 // }, 600)
-                 // Đặt display: none sau khi hiệu ứng mờ hoàn tất
                 isShowing[index] = false;
             }
         });
@@ -228,6 +168,51 @@ window.onload = function() {
       });
     });
   };
+
+//
+var clickCount = 0;
+var maxClicks = 5;
+
+document.querySelectorAll("#slider-button, #slider-button1, #slider-button2, #slider-button3").forEach(function(button) {
+    button.addEventListener("click", function() {
+        clickCount++;
+
+        if (clickCount >= maxClicks && clickCount < maxClicks * 2) {
+            document.querySelector('#app').style.display = 'none';
+            document.querySelector('#app2').style.display = 'block';
+            document.querySelector('#slider-button').style.display = 'none';
+            document.querySelector('#slider-button1').style.display = 'flex';
+        }
+
+        if (clickCount >= maxClicks * 2 && clickCount < maxClicks * 3) {
+            document.querySelector('#app2').style.display = 'none';
+            document.querySelector('#app3').style.display = 'block';
+            document.querySelector('#slider-button1').style.display = 'none';
+            document.querySelector('#slider-button2').style.display = 'flex';
+        }
+
+        if (clickCount >= maxClicks * 3 && clickCount < maxClicks * 4) {
+            document.querySelector('#app3').style.display = 'none';
+            document.querySelector('#app4').style.display = 'block';
+            document.querySelector('#slider-button2').style.display = 'none';
+            document.querySelector('#slider-button3').style.display = 'flex';
+        }
+
+        if (clickCount >= maxClicks * 4) {
+            document.querySelector('#app').style.display = 'block';
+            document.querySelector('#app4').style.display = 'none';
+            document.querySelector('#slider-button').style.display = 'flex';
+            document.querySelector('#slider-button3').style.display = 'none';
+
+            clickCount = 0;
+        }
+    });
+});
+
+
+
+
+
 
 
 
