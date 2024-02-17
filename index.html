@@ -140,4 +140,77 @@
     <script src="./assets/jvscr/loading.js"></script>
     <script src="./assets/jvscr/main-script.js"></script>
 </body>
+<div id="b_cheney">
+    <button id="dick">Show Image</button>
+    <div id="popup" class="popup">
+        <span class="close">&times;</span>
+        <div class="image-container">
+            <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Richard_Cheney_2005_official_portrait.jpg" alt="">
+            <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Ho_Chi_Minh_1946.jpg" alt="">
+            <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" alt="">
+        </div>
+        <button id="prev" class="prev" onclick="plusSlides(-1)">
+            <img src="./assets/img/image.png" alt="">
+        </button>
+        <button id="next" class="next" onclick="plusSlides(1)">
+            <img src="https://static.thenounproject.com/png/801787-200.png" alt="">
+        </button>
+        <p id="cheney_caption">My idols: 
+            <p id="caption"><a href="https://en.wikipedia.org/wiki/Dick_Cheney">Dick Cheney</a></p>
+        </p>
+    </div>
+    <script>
+        document.getElementById("dick").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "block";
+        });
+
+        document.querySelector(".close").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+        });
+        //
+        let slideIndex = 0;
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("slides");
+    const captions = ["Dick Cheney", "Ho Chi Minh", "Donald Trump"];
+
+    if (n >= slides.length) {
+        slideIndex = 0;
+    }
+    if (n < 0) {
+        slideIndex = slides.length - 1;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex].style.display = "block";
+
+    // Thay đổi nội dung chữ và link
+    const captionDiv = document.getElementById("caption");
+    captionDiv.innerHTML = captions[slideIndex];
+    if (slideIndex === 0) {
+        captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Dick_Cheney">' + captions[slideIndex] + '</a>';
+    } else if (slideIndex === 1) {
+        captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/H%E1%BB%93_Ch%C3%AD_Minh">' + captions[slideIndex] + '</a>';
+    } else if (slideIndex === 2) {
+        captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Donald_Trump">' + captions[slideIndex] + '</a>';
+    }
+}
+
+function openPopup() {
+    document.getElementById("popup").style.display = "block"; // Hiển thị popup
+    showSlides(0); // Hiển thị ảnh đầu tiên
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+    </script>
+</div>
 </html>
