@@ -120,19 +120,6 @@
                 </div>          
             </div>
         </div>
-        <div id="footer">
-            <!-- <div class="container1">
-                <div class="parent">
-                  DEF
-                </div>
-                <button class="child">
-                  def
-                </button>
-                <div class="hidden-div">
-                  Nội dung div khác
-                </div>
-            </div> -->
-        </div>
     </div>
     </div>
     <script src="/assets/jvscr/countdown.js"></script>
@@ -146,7 +133,7 @@
         <span class="close">&times;</span>
         <div class="image-container">
             <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Richard_Cheney_2005_official_portrait.jpg" alt="">
-            <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Ho_Chi_Minh_1946.jpg" alt="">
+            <img class="slides" src="https://www.infomoney.com.br/wp-content/uploads/2019/06/warren-buffett-2.jpg?fit=900%2C735&quality=70&strip=all" alt="">
             <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" alt="">
         </div>
         <button id="prev" class="prev" onclick="plusSlides(-1)">
@@ -177,7 +164,7 @@ function plusSlides(n) {
 function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("slides");
-    const captions = ["Dick Cheney", "Ho Chi Minh", "Donald Trump"];
+    const captions = ["Dick Cheney", "Warren Buffett", "Donald Trump"];
 
     if (n >= slides.length) {
         slideIndex = 0;
@@ -189,22 +176,20 @@ function showSlides(n) {
         slides[i].style.display = "none";
     }
     slides[slideIndex].style.display = "block";
-
-    // Thay đổi nội dung chữ và link
     const captionDiv = document.getElementById("caption");
     captionDiv.innerHTML = captions[slideIndex];
     if (slideIndex === 0) {
         captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Dick_Cheney">' + captions[slideIndex] + '</a>';
     } else if (slideIndex === 1) {
-        captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/H%E1%BB%93_Ch%C3%AD_Minh">' + captions[slideIndex] + '</a>';
+        captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Warren_Buffett">' + captions[slideIndex] + '</a>';
     } else if (slideIndex === 2) {
         captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Donald_Trump">' + captions[slideIndex] + '</a>';
     }
 }
 
 function openPopup() {
-    document.getElementById("popup").style.display = "block"; // Hiển thị popup
-    showSlides(0); // Hiển thị ảnh đầu tiên
+    document.getElementById("popup").style.display = "block"; 
+    showSlides(0); 
 }
 
 function closePopup() {

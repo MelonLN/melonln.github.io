@@ -521,10 +521,6 @@ html {
     100% { opacity: 1; }
 }
 
-#footer {
-
-}
-
 .container1 {
     display: flex;
 }
@@ -612,7 +608,7 @@ a:hover {
 }
 
 .image-container {
-    height: auto; /* Thiết lập chiều cao của container */
+    height: auto; 
 }
 
 .slides {
@@ -626,7 +622,7 @@ a:hover {
 
 .slides:nth-child(2),
 .slides:nth-child(3){
-    height: auto; 
+    height: 77.2vh; 
     object-fit: cover;
 }
 
