@@ -607,13 +607,27 @@ a:hover {
 
 .popup img {
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 80vh;
     
 }
 
+.image-container {
+    height: auto; /* Thiết lập chiều cao của container */
+}
+
 .slides {
-    width: 300px; /* Thiết lập chiều rộng */
-    height: auto; /* Tính toán chiều cao tự động để giữ tỷ lệ khung hình */
+    width: 300px; 
+}
+
+.slides:nth-child(1){
+    height: auto; 
+    object-fit: cover;
+}
+
+.slides:nth-child(2),
+.slides:nth-child(3){
+    height: auto; 
+    object-fit: cover;
 }
 
 .popup img:nth-child(2),
@@ -655,7 +669,7 @@ a:hover {
 }
 
 
-#dick{
+#scbt{
     opacity: 0;
 }
 
