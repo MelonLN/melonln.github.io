@@ -134,7 +134,6 @@
         <div class="image-container">
             <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Richard_Cheney_2005_official_portrait.jpg" alt="">
             <img class="slides" src="https://www.infomoney.com.br/wp-content/uploads/2019/06/warren-buffett-2.jpg?fit=900%2C735&quality=70&strip=all" alt="">
-            <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" alt="">
         </div>
         <button id="prev" class="prev" onclick="plusSlides(-1)">
             <img src="./assets/img/image.png" alt="">
@@ -164,7 +163,7 @@ function plusSlides(n) {
 function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("slides");
-    const captions = ["Dick Cheney", "Warren Buffett", "Donald Trump"];
+    const captions = ["Dick Cheney", "Warren Buffett"];
 
     if (n >= slides.length) {
         slideIndex = 0;
@@ -182,8 +181,6 @@ function showSlides(n) {
         captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Dick_Cheney">' + captions[slideIndex] + '</a>';
     } else if (slideIndex === 1) {
         captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Warren_Buffett">' + captions[slideIndex] + '</a>';
-    } else if (slideIndex === 2) {
-        captionDiv.innerHTML = '<a href="https://en.wikipedia.org/wiki/Donald_Trump">' + captions[slideIndex] + '</a>';
     }
 }
 

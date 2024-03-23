@@ -612,22 +612,24 @@ a:hover {
 }
 
 .slides {
-    width: 300px; 
+    height: 430px;
+    width: 300px;
+    object-fit: cover; 
 }
 
-.slides:nth-child(1){
-    height: auto; 
-    object-fit: cover;
+@media (max-width: 768px) {
+    .slides {
+        height: 400px;
+    }
 }
 
-.slides:nth-child(2),
-.slides:nth-child(3){
-    height: 77.2vh; 
-    object-fit: cover;
+@media (max-width: 480px) {
+    .slides {
+        height: 300px; 
+    }
 }
 
-.popup img:nth-child(2),
-.popup img:nth-child(3) {
+.popup img:nth-child(2) {
     display: none;
 }
 

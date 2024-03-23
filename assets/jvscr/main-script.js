@@ -170,44 +170,44 @@ window.onload = function() {
   };
 
 //
-var clickCount = 0;
-var maxClicks = 5;
+// var clickCount = 0;
+// var maxClicks = 5;
 
-document.querySelectorAll("#slider-button, #slider-button1, #slider-button2, #slider-button3").forEach(function(button) {
-    button.addEventListener("click", function() {
-        clickCount++;
+// document.querySelectorAll("#slider-button, #slider-button1, #slider-button2, #slider-button3").forEach(function(button) {
+//     button.addEventListener("click", function() {
+//         clickCount++;
 
-        if (clickCount >= maxClicks && clickCount < maxClicks * 2) {
-            document.querySelector('#app').style.display = 'none';
-            document.querySelector('#app2').style.display = 'block';
-            document.querySelector('#slider-button').style.display = 'none';
-            document.querySelector('#slider-button1').style.display = 'flex';
-        }
+//         if (clickCount >= maxClicks && clickCount < maxClicks * 2) {
+//             document.querySelector('#app').style.display = 'none';
+//             document.querySelector('#app2').style.display = 'block';
+//             document.querySelector('#slider-button').style.display = 'none';
+//             document.querySelector('#slider-button1').style.display = 'flex';
+//         }
 
-        if (clickCount >= maxClicks * 2 && clickCount < maxClicks * 3) {
-            document.querySelector('#app2').style.display = 'none';
-            document.querySelector('#app3').style.display = 'block';
-            document.querySelector('#slider-button1').style.display = 'none';
-            document.querySelector('#slider-button2').style.display = 'flex';
-        }
+//         if (clickCount >= maxClicks * 2 && clickCount < maxClicks * 3) {
+//             document.querySelector('#app2').style.display = 'none';
+//             document.querySelector('#app3').style.display = 'block';
+//             document.querySelector('#slider-button1').style.display = 'none';
+//             document.querySelector('#slider-button2').style.display = 'flex';
+//         }
 
-        if (clickCount >= maxClicks * 3 && clickCount < maxClicks * 4) {
-            document.querySelector('#app3').style.display = 'none';
-            document.querySelector('#app4').style.display = 'block';
-            document.querySelector('#slider-button2').style.display = 'none';
-            document.querySelector('#slider-button3').style.display = 'flex';
-        }
+//         if (clickCount >= maxClicks * 3 && clickCount < maxClicks * 4) {
+//             document.querySelector('#app3').style.display = 'none';
+//             document.querySelector('#app4').style.display = 'block';
+//             document.querySelector('#slider-button2').style.display = 'none';
+//             document.querySelector('#slider-button3').style.display = 'flex';
+//         }
 
-        if (clickCount >= maxClicks * 4) {
-            document.querySelector('#app').style.display = 'block';
-            document.querySelector('#app4').style.display = 'none';
-            document.querySelector('#slider-button').style.display = 'flex';
-            document.querySelector('#slider-button3').style.display = 'none';
+//         if (clickCount >= maxClicks * 4) {
+//             document.querySelector('#app').style.display = 'block';
+//             document.querySelector('#app4').style.display = 'none';
+//             document.querySelector('#slider-button').style.display = 'flex';
+//             document.querySelector('#slider-button3').style.display = 'none';
 
-            clickCount = 0;
-        }
-    });
-});
+//             clickCount = 0;
+//         }
+//     });
+// });
 
 //
 
@@ -224,6 +224,8 @@ document.addEventListener("keydown", function (event){
 document.addEventListener('contextmenu',
     event => event.preventDefault()
     );
+
+
 
 
 
