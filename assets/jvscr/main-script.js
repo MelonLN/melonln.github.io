@@ -37,7 +37,11 @@ var observer = new MutationObserver(function(mutations) {
       if (displayStyle === 'block') {
         var progressElement = mutation.target.querySelector('.progress');
         if (progressElement) {
-          animateProgress(0, 97.48, 2000, progressElement);
+          animateProgress(0, 96.66, 2000, progressElement);
+        }
+        var progressElement = mutation.target.querySelector('.progress3');
+        if (progressElement) {
+          animateProgress(0, 86.66, 2000, progressElement);
         }
       }
     }

@@ -494,11 +494,31 @@ html {
     font-weight: bold;
 }
 
+.button5{
+    display: block;
+    margin-left: 60%;
+    background-color: #ffffff;
+    transform: translateY(-12px);
+    width: 50px;
+    height: 20px;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    box-shadow: 4px 4px 0px rgb(119, 119, 119);
+}
+.button5:hover{
+    transform: translateX(-4px) translateY(-16px);
+    box-shadow: 8px 8px 0px rgb(119, 119, 119);
+}
+.button5:active{
+    transform: translateX(4px) translateY(-8px);
+    box-shadow: none;
+}
+
 .button3{
     display: block;
     margin-left: 60%;
     background-color: #585858;
-    transform: translateY(-15px);
+    transform: translateY(-14px);
     width: 50px;
     height: 20px;
     border: 0px solid #000000;
@@ -551,6 +571,7 @@ color: #ffffff;
     animation: progress2 0.5s linear;
 }
 
+.progress3,
 .progress{
     margin-left: 103%;
     transform: translateY(-100%);
@@ -561,8 +582,15 @@ color: #ffffff;
     transform: translateY(-12%);
 }
 
+.loading-status1 {
+    width: 86.66%;
+    height: 100%;
+    background-color: #39d43f;
+    animation: progress3 2.3s linear;
+} 
+
 .loading-status {
-width: 97.48%;
+width: 96.66%;
 height: 100%;
 background-color: #39d43f;
 animation: progress 2.3s linear;
@@ -570,7 +598,11 @@ animation: progress 2.3s linear;
 
 @keyframes progress {
 0% {width: 0%;}
-100% {width: 97.48%;}
+100% {width: 96.66%;}
+}
+@keyframes progress3 {
+    0% {width: 0%;}
+    100% {width: 86.66%;}
 }
 
 @keyframes progress2 {
