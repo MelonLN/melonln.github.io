@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./assets/img/favicon.png">
     <link rel="stylesheet" href="./assets/css/loading.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <div id="loader">
-    <img src="./assets/img/loading.png" alt="Loading...">
+    <!-- <img src="./assets/img/loading.png" alt="Loading..."> -->
     <div class="loading-screen block">
         <div class="background"></div>
+        <!-- <div id="loading-scripts">
+            <script src="./assets/jvscr/4d-cube.js"></script>
+        </div> -->
     <div class="main block">
         <div class="block"></div>
         <div class="block"></div>
@@ -67,23 +71,34 @@
                 </span>
                 <div class="container">
                     <div class="text3">
-                        First game.
+                        VNMCSR website
                     </div>
                     <button class="button-content">
                         View         
                     </button>
                 </div>
                 <div class="description">
-                    The game made with JavaScript (A simple game like FlappyBird.)<br>
+                    Vietnam Minecraft Speedrun Leaderboards.<br>
                     <div class="loader-container">
-                        <div class="progress1">0.00%</div>
+                        <div class="loading-status4"></div>
+                        <div class="progress5">0.00%</div>
                     </div>
-                    <button class="button3">
-                            <span class="content6">
-                                Play
-                            </span>
-                    </button>   
-                </div>
+                    <button class="button5" onclick="window.location.href='https:\\/\\/babeoban.github.io/ldb-rmake/'">
+                        <span class="content6">
+                            Visit
+                        </span>
+                    </button>
+                    Vietnam Minecraft Speedrun Ranked Data.<br>
+                    <div class="loader-container">
+                        <div class="loading-status3"></div>
+                        <div class="progress4">0.00%</div>
+                    </div>
+                    <button class="button5" onclick="window.location.href='https:\\/\\/babeoban.github.io/vnrankedlist/'">
+                        <span class="content6">
+                            Visit
+                        </span>
+                    </button>
+                </div>                
                 <div class="container">
                     <div class="text3">
                         Life Counter.
@@ -127,6 +142,7 @@
     <script src="./assets/jvscr/tying-animation.js"></script>
     <script src="./assets/jvscr/loading.js"></script>
     <script src="./assets/jvscr/main-script.js"></script>
+    <script src="./assets/jvscr/4d-cube.js"></script>
 </body>
 <div id="scr">
     <button id="scbt">Show Image</button>

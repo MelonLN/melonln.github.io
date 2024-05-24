@@ -10,6 +10,14 @@
   justify-content: center;
 }
 
+#myCanvas,
+canvas { 
+  display: block; 
+  width: 400px;
+  height: 351px;
+  /* position: absolute; */
+}
+
 @keyframes loading-block {
   0% {
     opacity: 0;
@@ -29,8 +37,12 @@
   }
 }
 
+.main.block{
+  position: fixed;
+}
+
 .loading-screen.block.block {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;

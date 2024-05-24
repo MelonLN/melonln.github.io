@@ -1,12 +1,12 @@
 //fix shadow
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var navItems = document.querySelectorAll("#nav2 li");
-    navItems.forEach(function(navItem) {
-        navItem.addEventListener("mousedown", function() {
+    navItems.forEach(function (navItem) {
+        navItem.addEventListener("mousedown", function () {
             var img = this.querySelector("img");
             img.style.filter = "drop-shadow(0px 0px 0px rgba(0, 0, 0, 0))";
         });
-        navItem.addEventListener("mouseup", function() {
+        navItem.addEventListener("mouseup", function () {
             var img = this.querySelector("img");
             img.style.filter = "drop-shadow(4px 4px 0px rgb(255, 255, 255))";
         });
@@ -18,46 +18,54 @@ function animateProgress(start, end, duration, progressElement) {
     var range = end - start;
     var current = start;
     var increment = range / (duration / 10);
-  
-    var timer = setInterval(function() {
-      current += increment;
-      progressElement.textContent = current.toFixed(2) + "%";
-      if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-        clearInterval(timer);
-        progressElement.textContent = end.toFixed(2) + "%";
-      }
+
+    var timer = setInterval(function () {
+        current += increment;
+        progressElement.textContent = current.toFixed(2) + "%";
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+            clearInterval(timer);
+            progressElement.textContent = end.toFixed(2) + "%";
+        }
     }, 10);
 }
 
 // Create a new MutationObserver instance
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-      var displayStyle = mutation.target.style.display;
-      if (displayStyle === 'block') {
-        var progressElement = mutation.target.querySelector('.progress');
-        if (progressElement) {
-          animateProgress(0, 96.66, 2000, progressElement);
+var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+            var displayStyle = mutation.target.style.display;
+            if (displayStyle === 'block') {
+                var progressElement = mutation.target.querySelector('.progress');
+                if (progressElement) {
+                    animateProgress(0, 96.66, 2000, progressElement);
+                }
+                var progressElement = mutation.target.querySelector('.progress3');
+                if (progressElement) {
+                    animateProgress(0, 86.66, 2000, progressElement);
+                }
+                var progressElement = mutation.target.querySelector('.progress4');
+                if (progressElement) {
+                    animateProgress(0, 88.00, 2000, progressElement);
+                }
+                var progressElement = mutation.target.querySelector('.progress5');
+                if (progressElement) {
+                    animateProgress(0, 100.00, 1500, progressElement);
+                }
+            }
         }
-        var progressElement = mutation.target.querySelector('.progress3');
-        if (progressElement) {
-          animateProgress(0, 86.66, 2000, progressElement);
-        }
-      }
-    }
-  });
+    });
 });
 
 // Start observing
 var targetNodes = document.querySelectorAll('.description');
-targetNodes.forEach(function(targetNode) {
-  observer.observe(targetNode, { attributes: true });
+targetNodes.forEach(function (targetNode) {
+    observer.observe(targetNode, { attributes: true });
 });
 
 
 //typing
 var app = document.getElementById('app');
-var typewriter= new Typewriter(app, {
+var typewriter = new Typewriter(app, {
     delay: 35,
 });
 typewriter
@@ -108,31 +116,31 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 //2
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var buttons = document.querySelectorAll('.button-content');
     var descriptions = document.querySelectorAll('.description');
     // var containers = Array.from(document.querySelectorAll('.container'));
 
     var isShowing = new Array(descriptions.length).fill(false);
 
-    buttons.forEach(function(button, index) {
-        button.addEventListener('click', function() {
+    buttons.forEach(function (button, index) {
+        button.addEventListener('click', function () {
             var description = descriptions[index];
             // var descriptions = document.querySelectorAll('.description');
             // var containers = Array.from(document.querySelectorAll('.container'));
-            descriptions.forEach(function(description) {
+            descriptions.forEach(function (description) {
                 description.classList.toggle("open");
-            }); 
+            });
             if (!isShowing[index]) {
                 // for (var i = index + 1; i < containers.length; i++){
                 //     containers[i].classList.toggle("open");
                 // }
-                setTimeout(function() {
+                setTimeout(function () {
                     description.style.opacity = '1';
                     // for (var i = index + 1; i < containers.length; i++){
                     //     containers[i].classList.toggle("open");
                     // }
-                }, 50); 
+                }, 50);
                 description.style.display = 'block';
                 // // setTimeout(function() {
                 //     for (var i = index + 1; i < containers.length; i++){
@@ -142,11 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 isShowing[index] = true;
             } else {
                 description.style.opacity = '0';
-                setTimeout(function() {
+                setTimeout(function () {
                     if (!isShowing[index]) {
                         description.style.display = 'none';
                     }
-                    for (var i = index + 1; i < containers.length; i++){
+                    for (var i = index + 1; i < containers.length; i++) {
                         containers[i].classList.toggle("close");
                     }
                 }, 500);
@@ -162,16 +170,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //
-window.onload = function() {
+window.onload = function () {
     var containers = document.querySelectorAll(".text3, .underline");
-    containers.forEach(function(container) {
-      container.style.animation = "fall-motion3 2s";
-  
-      container.addEventListener("animationend", function() {
-        container.style.animation = "";
-      });
+    containers.forEach(function (container) {
+        container.style.animation = "fall-motion3 2s";
+
+        container.addEventListener("animationend", function () {
+            container.style.animation = "";
+        });
     });
-  };
+};
+
+//scr
+document.getElementById("slider-button").addEventListener("click", function() {
+    document.getElementById("popup2").style.display = "block";
+});
+
 
 //
 // var clickCount = 0;
@@ -215,19 +229,19 @@ window.onload = function() {
 
 //
 
-document.addEventListener("keydown", function (event){
-    if (event.ctrlKey){
-       event.preventDefault();
+document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey) {
+        event.preventDefault();
     }
-    if(event.keyCode == 123){
-       event.preventDefault();
+    if (event.keyCode == 123) {
+        event.preventDefault();
     }
 });
 
 //
 document.addEventListener('contextmenu',
     event => event.preventDefault()
-    );
+);
 
 
 
