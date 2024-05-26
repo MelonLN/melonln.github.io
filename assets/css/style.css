@@ -84,6 +84,7 @@ html {
 
 #slider {
     position: relative;
+    margin-left: 8%;
 }
 
 #slowshower {
@@ -99,7 +100,7 @@ html {
     width: 100px;
     height: 100px;
     box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.979);
-    margin-left: 100px;
+    /* margin-left: 90px; */
     border: 0px solid #000000;
     border-radius: 0px;
     animation: fall-motion 0.5s;
@@ -156,7 +157,7 @@ html {
     font-size: 18px;
     position: absolute;
     top: 15%;
-    left: 220px;
+    left: 120px;
     transform: translateY(-50%);
     color: #ffffff;
     font-weight: bold;
@@ -196,8 +197,8 @@ html {
     display: flex;
     align-items: center;
     list-style-type: none;
-    width: 263px;
-    transform: translateX(209.4px) translateY(-110%);
+    width: 100px;
+    transform: translateX(108px) translateY(-110%);
 }
 
 #nav2 li:hover {
